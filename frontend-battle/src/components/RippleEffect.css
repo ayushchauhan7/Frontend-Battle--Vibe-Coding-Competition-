@@ -1,0 +1,60 @@
+.ripple-container {
+  position: relative;
+  min-height: 220px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 16px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.ripple-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.7;
+}
+.ripple-cta {
+  position: relative;
+  z-index: 2;
+  background: #646cff;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #0003;
+  transition: background 0.2s;
+  overflow: hidden;
+}
+.ripple-cta:hover {
+  background: #4b4be7;
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(100, 108, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-anim 0.6s linear;
+  pointer-events: none;
+  z-index: 10;
+}
+@keyframes ripple-anim {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+@media (max-width: 700px) {
+  .ripple-container {
+    min-height: 120px;
+  }
+  .ripple-cta {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+} 
